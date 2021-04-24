@@ -13,9 +13,10 @@ body {
     .slide {
       flex: 1 0 50%;
       min-width: 50%;
+      height: 450px;
     }
   }
-  @media screen and(min-width:$tablet + 1px) {
+  @media screen and(min-width:$desktop + 1px) {
     display: flex;
     flex-wrap: wrap;
     .slide {
