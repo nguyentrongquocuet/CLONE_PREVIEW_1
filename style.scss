@@ -1,0 +1,135 @@
+// reset
+@import "./mixins";
+@import "./global";
+@import "./components";
+@import "./elements/";
+//component
+
+// //fixed components
+// .action--fixed--bottom--left {
+//   position: absolute;
+//   left: 40px;
+//   bottom: 40px;
+//   z-index: 1;
+//   :first-child {
+//     margin-bottom: 16px;
+//   }
+// }
+
+// //components that have absolute-pos elements
+// .absolute-inside {
+//   position: relative;
+// }
+
+// //Section abstract
+
+// section.feature__section {
+//   width: 100%;
+//   max-width: 100%;
+//   /* overflow:hidden; */
+//   padding: 50px 0;
+//   text-align: center;
+//   header.section__header {
+//     margin-bottom: 40px;
+//     .section__header--large {
+//       margin-top: 16px;
+//     }
+//     button + button {
+//       margin-left: 1rem;
+//     }
+//   }
+//   .section__action {
+//     margin-top: 24px;
+//   }
+//   .section__footer {
+//     margin-top: 50px;
+//   }
+// }
+
+// //heading, title
+// .title {
+//   text-transform: uppercase;
+//   white-space: normal;
+//   &.title--xsmall {
+//     @include font(11);
+//   }
+//   &.title--small {
+//     @include font(12);
+//   }
+//   &.title--xlarge {
+//     @include font(15);
+//   }
+//   &.tilte--large {
+//     @include font(18);
+//   }
+//   &.title--xlarge {
+//     @include font(20);
+//   }
+// }
+
+// //product
+// //info
+// .product {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   .product__img {
+//     display: block;
+//     max-width: 100%;
+//     // margin-bottom: 20px;
+//     line-height: 0;
+//   }
+//   .product__info {
+//     text-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 16px;
+//     .product__title {
+//       width: 100%;
+//       text-align: center;
+//       white-space: normal;
+//       @include font(11);
+//     }
+//     .product__price {
+//       @include font(11);
+//     }
+//   }
+// }
+// //category
+// .category {
+//   height: 500px;
+//   flex: 0 0 100%;
+//   position: relative;
+//   overflow: hidden;
+//   &:hover {
+//     .category__image__container {
+//       transform: scale(1.1);
+//     }
+//   }
+
+//   // @include responive(MD) { min-width: 60% }
+
+//   // @include responive(LG) { min-width: 80% }
+
+//   .category__image__container {
+//     height: 100%;
+//     overflow: hidden;
+//     background-size: cover;
+//     background-position: center;
+//     transition: all 5s ease-out;
+//     .category__image {
+//       display: block;
+//       object-fit: cover;
+//       margin: 0;
+//       width: 100%;
+//       max-height: 100%;
+//       line-height: 0;
+//       opacity: 0;
+//     }
+//   }
+//   .category__info {
+//     text-align: left;
+//   }
+// }
+
+// //image links anchor: action inside image

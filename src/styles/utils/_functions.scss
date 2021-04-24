@@ -1,0 +1,9 @@
+//function
+//get breakpoint from breakpoint map
+@function getBP($bp: "mobile") {
+  @return map-get($breakpoint, $bp);
+}
+//get line-height from size-lineheight map
+@function getLineHeight($font-size: 14) {
+  @return map-get($size-lineheight, $font-size);
+}

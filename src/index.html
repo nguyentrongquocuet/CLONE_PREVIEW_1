@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- TODO: REFACTOR CSS SELECTORS TO BEM OR BULMA NAMING CONVENTION -->
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="header__nav">
+      <ul class="header__nav__list is-left">
+        <li class="header__nav__listitem"><a href="#" class="header__link heading h8">skincare</a></li>
+        <li class="header__nav__listitem"><a href="#" class="header__link heading h8">skincare</a></li>
+        <li class="header__nav__listitem"><a href="#" class="header__link heading h8">skincare</a></li>
+        <li class="header__nav__listitem"><a href="#" class="header__link heading h8">skincare</a></li>
+        <li class="header__nav__listitem"><a href="#" class="header__link heading h8">skincare</a></li>
+        <li class="header__nav__listitem"><a href="#" class="header__link heading h8">skincare</a></li>
+        <li class="header__nav__listitem"><a href="#" class="header__link heading h8">skincare</a></li>
+        <li class="header__nav__listitem alternate  is-left">
+          <span class="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </span>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__logo__wrapper">
+      <a href="#" class="header__link heading h8 header__logo__wrapper">
+        <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/logo-black_180x@2x.png?v=1594799107" alt=""
+          class="header__logo is-black">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/logo-white_05bc7f5d-6f90-4d29-981b-2bc2879ece67_180x@2x.png?v=1594799140"
+          alt="" class="header__logo is-white">
+      </a>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav__list is-nowrap is-right">
+        <li class="header__nav__listitem"><a class="header__link heading h8" href="#">Account</a></li>
+        <li class="header__nav__listitem"><a class="header__link heading h8" href="#">Account</a></li>
+        <li class="header__nav__listitem"><a class="header__link heading h8" href="#">Account</a></li>
+        <li class="header__nav__listitem alternate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </li>
+        <li class="header__nav__listitem alternate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag"
+            viewBox="0 0 16 16">
+            <path
+              d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+          </svg>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="section is-fullscreen is-hero">
+    <div class="section__body is-fullscreen">
+      <div class="slideshow__container is-fullscreen has-backdrop">
+        <div class="slide is-fullscreen">
+          <div class="img__container is-fullscreen has-backdrop">
+            <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/slideshow-03_2000x.jpg?v=1594798650" alt=""
+              class="img is-fixed is-hero">
+          </div>
+          <div class="slide__content is-fullwidth is-bottom is-eff-a">
+            <h3 class="heading is-sub-header h6">
+              body
+            </h3>
+            <h2 class="heading is-header h1">
+              glow + shine
+            </h2>
+            <a class="btn is-eff-a is-cta">discover products</a>
+          </div>
+        </div>
+        <div class="slide is-fullscreen has-center">
+          <div class="img__container is-fullscreen has-backdrop">
+            <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/slideshow-03_2000x.jpg?v=1594798650" alt=""
+              class="img is-fixed is-hero">
+          </div>
+          <div class="slide__content is-fullwidth is-center is-eff-a">
+            <h3 class="heading is-sub-header h6">
+              body
+            </h3>
+            <h2 class="heading is-header h1">
+              glow + shine
+            </h2>
+            <a class="btn is-eff-a is-cta">discover products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOR YOUR SKIN -->
+  <section class="section has-pad">
+    <header class="section__header">
+      <h3 class="heading is-sub-header h6">For your skin</h3>
+      <p class="heading is-header h1">
+        <button class="btn is-eff-b ">
+          Masques
+        </button>
+        <button class="btn is-eff-b">
+          Lips
+        </button>
+      </p>
+    </header>
+    <main class="section__body">
+      <div class="container has-inline-list">
+        <div class="container product__wrapper">
+          <div class="product is-inline">
+            <div class="product__image__wrapper">
+              <a href="#" class="product__url img__container is-fullwidth">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0019/4769/7211/products/Brazilian-Supermask-Face-Masque-Packaging_1200x.jpg?v=1594629794"
+                  alt="" class="product__img img is-fullwidth" />
+              </a>
+            </div>
+            <div class="product__info">
+              <a class="heading h6 product__title" href="#">Egyptian honey rose masque</a>
+              <!-- TODO: RAISE WHEN HOVER EFFECT -->
+              <span class="heading h6 product__price"> $52 </span>
+            </div>
+          </div>
+        </div>
+        <div class="container product__wrapper">
+          <div class="product is-inline">
+            <div class="product__image__wrapper">
+              <a href="#" class="product__url img__container is-fullwidth">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0019/4769/7211/products/Brazilian-Supermask-Face-Masque-Packaging_1200x.jpg?v=1594629794"
+                  alt="" class="product__img img is-fullwidth" />
+              </a>
+            </div>
+            <div class="product__info">
+              <a class="heading h6 product__title" href="#">Egyptian honey rose masque</a>
+              <!-- TODO: RAISE WHEN HOVER EFFECT -->
+              <span class="heading h6 product__price"> $52 </span>
+            </div>
+          </div>
+        </div>
+        <div class="container product__wrapper">
+          <div class="product is-inline">
+            <div class="product__image__wrapper">
+              <a href="#" class="product__url img__container is-fullwidth">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0019/4769/7211/products/Brazilian-Supermask-Face-Masque-Packaging_1200x.jpg?v=1594629794"
+                  alt="" class="product__img img is-fullwidth" />
+              </a>
+            </div>
+            <div class="product__info">
+              <a class="heading h6 product__title" href="#">Egyptian honey rose masque</a>
+              <!-- TODO: RAISE WHEN HOVER EFFECT -->
+              <span class="heading h6 product__price"> $52 </span>
+            </div>
+          </div>
+        </div>
+        <div class="container product__wrapper">
+          <div class="product is-inline">
+            <div class="product__image__wrapper">
+              <a href="#" class="product__url img__container is-fullwidth">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0019/4769/7211/products/Brazilian-Supermask-Face-Masque-Packaging_1200x.jpg?v=1594629794"
+                  alt="" class="product__img img is-fullwidth" />
+              </a>
+            </div>
+            <div class="product__info">
+              <a class="heading h6 product__title" href="#">Egyptian honey rose masque</a>
+              <!-- TODO: RAISE WHEN HOVER EFFECT -->
+              <span class="heading h6 product__price"> $52 </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section__footer">
+        <a class="btn is-secondary is-eff-a">
+          view all products
+        </a>
+      </div>
+    </main>
+  </section>
+  <!-- CONJACT -->
+  <section class="section has-pad">
+    <div class="section__header">
+      <h3 class="heading is-sub-header h6">
+        For dehydrated and fatigued skin
+      </h3>
+      <h2 class="heading is-header h1">
+        Konjac Sponge
+      </h2>
+    </div>
+    <div class="section__body container">
+      <div class="product is-large has-fullcontent">
+        <div class="product__img">
+          <div class="product__image__wrapper container">
+            <a href="#" class="block img__container is-fullwidth">
+              <div class="img__container is-fullwidth">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0019/4769/7211/products/Jeju-Island-Bamboo-Charcoal-Konjac-Facial-Sponge_1000x.jpg?v=1594629837"
+                  alt="" class="img is-fixed is-fullwidth">
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="container product__info__container">
+
+          <div class="product__info">
+            <div class="">
+              <h2 class="heading is-header is-reversed h2 ">
+                Jeju Island Konjac Facial Sponge
+              </h2>
+              <h3 class="heading is-sub-header is-reversed h4">
+                $50
+              </h3>
+            </div>
+            <div class="product__desc">
+              <p class="desc is-medium is-left">
+                Our Jeju Island Konjac Facial Sponge is ideal for oily and acne prone skin. Made of 100%
+                Konjac plant
+                root
+                and natural Bamboo Charcoal, this sponge contains activated carbon and various minerals that
+                help draw
+                out
+                impurities and excess oil. The unique net like structure of the vegetable fibres will gently
+                cleanse and
+                exfoliate your skin, leaving your face feeling fresh, smooth, radiant and soft.
+              </p>
+              <em class="desc is-medium is-left">
+                This is a demo store. This product can be bought on <a href="#">Artifact</a> website.
+              </em>
+              <div class="product__colors">
+                <p class="desc is-medium is-left">
+                  Color: Bamboo Charcoal
+                </p>
+                <ul>
+                  <li class="product__color is-selected">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/bamboo-charcoal_64x64.png?v=1594801393"
+                      alt="" class="product__color">
+                  </li>
+                  <li class="product__color">
+                    <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/pink-clay_64x64.png?v=1594801393"
+                      alt="" class="product__color">
+                  </li>
+                  <li class="product__color">
+                    <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/pure-konjac_64x64.png?v=1594801393"
+                      alt="" class="product__color">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <a class="btn is-secondary is-eff-a is-fullwidth">
+              add to card
+            </a>
+          </div>
+          <div class=" product__link__wrapper">
+            <a href="#">view product details</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE SHOW -->
+  <section class="section">
+    <div class="slideshow__container category-slideshow is-fullscreen">
+      <div class="slide is-fullscreen collection">
+        <div class="block img__container has-hover-scaling has-backdrop has-bg-img is-fullscreen">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_750x750_crop_center.jpg?v=1594627276%20750w,%20//cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_1000x.jpg?v=1594627276%201000w,%20//cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_1500x.jpg?v=1594627276%201500w"
+            alt="" class="img is-fullheight is-fullwidth" />
+        </div>
+        <div class="slide__content container is-bottom is-eff-a">
+          <h2 class="heading is-sub-header h1">Skin care</h2>
+          <a class="btn is-eff-a is-cta" href="#">view products</a>
+        </div>
+      </div>
+      <div class="slide is-fullscreen collection">
+        <div class="block img__container has-backdrop has-bg-img is-fullscreen">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_750x750_crop_center.jpg?v=1594627276%20750w,%20//cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_1000x.jpg?v=1594627276%201000w,%20//cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_1500x.jpg?v=1594627276%201500w"
+            alt="" class="img is-fullheight is-fullwidth" />
+        </div>
+        <div class="slide__content container is-bottom is-eff-a">
+          <h2 class="heading is-sub-header h1">Skin care</h2>
+          <a class="btn is-eff-a is-cta" href="#">view products</a>
+        </div>
+      </div>
+      <div class="slide is-fullscreen collection">
+        <div class="block img__container has-backdrop has-bg-img is-fullscreen">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_750x750_crop_center.jpg?v=1594627276%20750w,%20//cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_1000x.jpg?v=1594627276%201000w,%20//cdn.shopify.com/s/files/1/0019/4769/7211/collections/collection-skincare_1500x.jpg?v=1594627276%201500w"
+            alt="" class="img is-fullheight is-fullwidth" />
+        </div>
+        <div class="slide__content container is-bottom is-eff-a">
+          <h2 class="heading is-sub-header h1">Skin care</h2>
+          <a class="btn is-eff-a is-cta" href="#">view products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- DISCOVER OUR RANGE -->
+  <section class="section has-pad shop-the-look">
+    <header class="section__header feature--image--only__header">
+      <h3 class="heading is-sub-header h6">
+        Hair
+      </h3>
+      <h2 class="heading is-header h1">
+        discover our range
+      </h2>
+    </header>
+    <main class="section__body container shop-the-look">
+      <div class="shop-the-look__item">
+        <div class="block has-bg-img is-fullscreen has-backdrop">
+          <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/shop-hair_700x.progressive.jpg?v=1594801444"
+            alt="" class="img is-fullheight is-fullwidth">
+          <label title="View product" for="toggle-view" style="top: 60%; left:20%" class="image__link-anchor">
+          </label>
+          <span title="View product" style="top: 70%; left:60%" class="image__link-anchor">
+          </span>
+          <span title="View product" style="top: 40%; left:70%" class="image__link-anchor">
+          </span>
+        </div>
+      </div>
+
+      <div class="shop-the-look__info container">
+        <header class="">
+          <span class="exit-look-mode">
+            X
+          </span>
+          <p>Shop the look</p>
+        </header>
+        <div class="shop-the-look__main">
+          <div class="product" aria-hidden="true">
+            <div class="product__image__wrapper">
+              <a href="#" class="product__url img__container">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0019/4769/7211/products/Brazilian-Supermask-Face-Masque-Packaging_1200x.jpg?v=1594629794"
+                  alt="" class="product__img img  is-fullheight is-fullwidth" />
+              </a>
+            </div>
+            <div class="product__info">
+              <a class="title title--xsmall product__title product__title__link" href="#">Egyptian honey rose masque</a>
+              <span class="title title--small product__price hover--vertical--raising"> $52 </span>
+            </div>
+          </div>
+
+          <div class="shop-the-look__footer">
+            <button class="btn is-eff-a is-cta is-secondary is-fullwidth">
+              View products
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section has-pad timeline-section">
+    <div class="timeline timeline-section__body ">
+      <div class="timeline__list container has-inline-list">
+        <div class="block is-inline timeline__item__wrapper is-selected">
+          <div class="img__container has-bg-img has-backdrop timeline__img__wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/timeline-story_x650.jpg?v=1594798996"
+              alt="" class="img is-fixed is-fullscreen">
+          </div>
+          <div class="timeline__content has-raise-effect">
+            <h3 class="heading is-sub-header h6">
+              accent wisdom
+            </h3>
+            <h2 class="heading is-header h1">
+              modern performance
+            </h2>
+            <p class="timeline__desc desc is-medium">
+              We lovingly create products that will complement and enhance the daily self-care ritual, using
+              only the
+              highest quality active ingredients and botanicals that are effective, high-performance and
+              always
+              non-toxic.
+            </p>
+          </div>
+        </div>
+        <div class="block is-inline timeline__item__wrapper">
+          <div class="img__container has-bg-img has-backdrop timeline__img__wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/timeline-story_x650.jpg?v=1594798996"
+              alt="" class="img is-fixed is-fullscreen">
+          </div>
+          <div class="timeline__content has-raise-effect">
+            <h3 class="heading is-sub-header h6">
+              accent wisdom
+            </h3>
+            <h2 class="heading is-header h1">
+              modern performance
+            </h2>
+            <p class="timeline__desc desc is-medium">
+              We lovingly create products that will complement and enhance the daily self-care ritual, using
+              only the
+              highest quality active ingredients and botanicals that are effective, high-performance and
+              always
+              non-toxic.
+            </p>
+          </div>
+        </div>
+        <div class="block is-inline timeline__item__wrapper">
+          <div class="img__container has-bg-img has-backdrop timeline__img__wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/timeline-story_x650.jpg?v=1594798996"
+              alt="" class="img is-fixed is-fullscreen">
+          </div>
+          <div class="timeline__content has-raise-effect">
+            <h3 class="heading is-sub-header h6">
+              accent wisdom
+            </h3>
+            <h2 class="heading is-header h1">
+              modern performance
+            </h2>
+            <p class="timeline__desc desc is-medium">
+              We lovingly create products that will complement and enhance the daily self-care ritual, using
+              only the
+              highest quality active ingredients and botanicals that are effective, high-performance and
+              always
+              non-toxic.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline__tab">
+        <!-- <div class="timeline__tabitem is-focus"> -->
+        <div class="is-focus timeline__tabitem btn is-fullheight is-eff-b">
+          story
+        </div>
+        <!-- </div> -->
+        <div class="timeline__tabitem btn is-fullheight is-eff-b">
+          inspiration
+        </div>
+        <div class="timeline__tabitem is-fullheight btn is-eff-b">
+          quality
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- GIFT -->
+  <section class="section has-pad">
+    <div class="section__header">
+      <h3 class="heading is-sub-header h6">
+        the perfect gift
+      </h3>
+      <h2 class="heading is-header h1">
+        for your friends
+      </h2>
+    </div>
+    <div class="section__body container">
+      <div class="product is-large has-fullcontent">
+        <div class="product__img">
+          <div class="product__image__wrapper container">
+            <a href="#" class="block img__container is-fullwidth">
+              <div class="img__container is-fullwidth">
+                <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/products/gift-card_900x.png?v=1594629761"
+                  alt="" class="img is-fixed is-fullwidth">
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="product__info__container">
+          <div class="product__info">
+            <div class="">
+              <h2 class="heading is-header is-reversed h2 ">
+                the gift card
+              </h2>
+              <h3 class="heading is-sub-header is-reversed h4">
+                $50
+              </h3>
+            </div>
+            <div class="product__desc">
+              <p class="desc is-medium is-left">
+                It's the perfect gift for everyone on your list (as well as the simplest). The recipient can
+                redeem it
+                for
+                merchandise of their choice!
+              </p>
+              <em class="desc is-medium is-left">
+                This is a demo store. This product can be bought on <a href="#">Artifact</a> website.
+              </em>
+            </div>
+          </div>
+          <div class="container">
+            <a class="btn is-secondary is-eff-a is-fullwidth">
+              add to card
+            </a>
+          </div>
+          <div class="container product__link__wrapper">
+            <a href="#">view product details</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ARTICLE -->
+  <section class="section article-section has-pad">
+    <div class="section__header">
+      <h3 class="heading is-sub-header h6">
+        news
+      </h3>
+      <h2 class="heading is-header h1">
+        from the journal
+      </h2>
+    </div>
+    <div class="section__body container article-section__body">
+      <article class="article">
+        <div class="article__img__wrapper">
+          <a href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/articles/clean-brushes_700x.jpg?v=1594629600"
+              class="img is-fixed is-fullwidth" alt="">
+          </a>
+        </div>
+        <div class="article__content">
+          <h2 class="heading is-header h2 is-left">
+            how to clean makeup brushes?
+          </h2>
+          <p class="desc is-left">
+            I'm going to admit...that I don't always wash my makeup brushes when it's due for a cleaning. I
+            know...I
+            know...gross! However, I do sanitize them ...
+          </p>
+          <a href="#">Read more</a>
+        </div>
+      </article>
+
+      <article class="article">
+        <div class="article__img__wrapper">
+          <a href="#">
+            <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/articles/clean-brushes_700x.jpg?v=1594629600"
+              class="img is-fixed is-fullwidth" alt="">
+          </a>
+        </div>
+        <div class="article__content">
+          <h2 class="heading is-header h2 is-left">
+            how to clean makeup brushes?
+          </h2>
+          <p class="desc is-left">
+            I'm going to admit...that I don't always wash my makeup brushes when it's due for a cleaning. I
+            know...I
+            know...gross! However, I do sanitize them ...
+          </p>
+          <a href="#">Read more</a>
+        </div>
+      </article>
+    </div>
+    <div class="section__footer">
+      <a class="btn is-secondary is-eff-a">
+        discover our stories
+      </a>
+    </div>
+  </section>
+  <!-- SLOGAN -->
+  <section class="section slogan-section">
+    <div class="section__body slogan-section__body block has-bg-img">
+      <div class="img__container is-fullheight is-fullwidth slogan-section__img__wrapper">
+        <img src="https://cdn.shopify.com/s/files/1/0019/4769/7211/files/photo-parallax_1500x.jpg?v=1594799078" alt=""
+          class="img is-fullwidth is-fullheight">
+      </div>
+      <div class="slogan-section__content">
+        <h3 class="heading is-sub-header h6">
+          Ancient wisdom + modern performance
+        </h3>
+        <p class="desc">
+          We lovingly create products that will complement and enhance the daily self-care ritual.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__section">
+        <div class="footer__block">
+          <h2 class="footer__title heading h6">
+            about the shop
+          </h2>
+          <p>
+            Artifact Skin Co is a Canadian brand, created by Narae Kim and Elie Nehme, which specializes in
+            the
+            production of all-natural face masks.
+            <br>
+            <br>
+            Thanks to <a href="#">Artifact Skin Co</a> for allowing us to use their photography and products
+            in this
+            demo store.
+          </p>
+          <div class="footer__socials">
+            <ul class="footer__socials">
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-twitter" viewBox="0 0 16 16">
+                    <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                  </svg>
+                </a>
+              </li>
+              <li><a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-google" viewBox="0 0 16 16">
+                    <path
+                      d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                  </svg>
+                </a>
+
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__block">
+          <h2 class="footer__title heading is-header h6">
+            shop
+          </h2>
+          <ul class="footer__linklist">
+            <li>Skincare</li>
+            <li>Body</li>
+            <li>Hair</li>
+            <li>Kist</li>
+            <li>Accessories</li>
+          </ul>
+        </div>
+        <div class="footer__block">
+          <h2 class="footer__title heading is-header h6">
+            About
+          </h2>
+          <ul class="footer__linklist">
+            <li>Story</li>
+            <li>journal</li>
+            <li>Faq</li>
+            <li>Terms of Ussage</li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="footer__block">
+          <h2 class="footer__title heading is-header h6">
+            newsletters
+          </h2>
+          <p>
+            Subscribe to receive updates, access to exclusive deals, and more.
+          </p>
+          <form class="footer__newsletter__form">
+            <input type="text" class="input formfield" name="email" id="email">
+            <button class="btn is-secondary is-eff-a formfield" type="submit">
+              subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__section last-section">
+        <div class="footer__block">
+          <div class="currency-unit">
+            <p class="heading h8">
+              usd$
+            </p>
+          </div>
+          <div class="footer__copyright">
+            <a href="#" class="heading h7">© Prestige - Vogue</a>
+          </div>
+          <p class="footer__author">
+            <a href="#">Shopify</a>
+          </p>
+        </div>
+        <div class="footer__payments">
+          <ul>
+            <li>
+              <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                aria-labelledby="pi-visa">
+                <title id="pi-visa">Visa</title>
+                <path opacity=".07"
+                  d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                </path>
+                <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32">
+                </path>
+                <path
+                  d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z"
+                  fill="#142688"></path>
+              </svg>
+            </li>
+            <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                aria-labelledby="pi-master">
+                <title id="pi-master">Mastercard</title>
+                <path opacity=".07"
+                  d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                </path>
+                <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32">
+                </path>
+                <circle fill="#EB001B" cx="15" cy="12" r="7"></circle>
+                <circle fill="#F79E1B" cx="23" cy="12" r="7"></circle>
+                <path fill="#FF5F00"
+                  d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z">
+                </path>
+              </svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24"
+                aria-labelledby="pi-american_express">
+                <title id="pi-american_express">American Express</title>
+                <g fill="none">
+                  <path fill="#000"
+                    d="M35,0 L3,0 C1.3,0 0,1.3 0,3 L0,21 C0,22.7 1.4,24 3,24 L35,24 C36.7,24 38,22.7 38,21 L38,3 C38,1.3 36.6,0 35,0 Z"
+                    opacity=".07"></path>
+                  <path fill="#006FCF"
+                    d="M35,1 C36.1,1 37,1.9 37,3 L37,21 C37,22.1 36.1,23 35,23 L3,23 C1.9,23 1,22.1 1,21 L1,3 C1,1.9 1.9,1 3,1 L35,1">
+                  </path>
+                  <path fill="#FFF"
+                    d="M8.971,10.268 L9.745,12.144 L8.203,12.144 L8.971,10.268 Z M25.046,10.346 L22.069,10.346 L22.069,11.173 L24.998,11.173 L24.998,12.412 L22.075,12.412 L22.075,13.334 L25.052,13.334 L25.052,14.073 L27.129,11.828 L25.052,9.488 L25.046,10.346 L25.046,10.346 Z M10.983,8.006 L14.978,8.006 L15.865,9.941 L16.687,8 L27.057,8 L28.135,9.19 L29.25,8 L34.013,8 L30.494,11.852 L33.977,15.68 L29.143,15.68 L28.065,14.49 L26.94,15.68 L10.03,15.68 L9.536,14.49 L8.406,14.49 L7.911,15.68 L4,15.68 L7.286,8 L10.716,8 L10.983,8.006 Z M19.646,9.084 L17.407,9.084 L15.907,12.62 L14.282,9.084 L12.06,9.084 L12.06,13.894 L10,9.084 L8.007,9.084 L5.625,14.596 L7.18,14.596 L7.674,13.406 L10.27,13.406 L10.764,14.596 L13.484,14.596 L13.484,10.661 L15.235,14.602 L16.425,14.602 L18.165,10.673 L18.165,14.603 L19.623,14.603 L19.647,9.083 L19.646,9.084 Z M28.986,11.852 L31.517,9.084 L29.695,9.084 L28.094,10.81 L26.546,9.084 L20.652,9.084 L20.652,14.602 L26.462,14.602 L28.076,12.864 L29.624,14.602 L31.499,14.602 L28.987,11.852 L28.986,11.852 Z">
+                  </path>
+                </g>
+              </svg>
+            </li>
+            <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img"
+                aria-labelledby="pi-paypal">
+                <title id="pi-paypal">PayPal</title>
+                <path opacity=".07"
+                  d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                </path>
+                <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32">
+                </path>
+                <path fill="#003087"
+                  d="M23.9 8.3c.2-1 0-1.7-.6-2.3-.6-.7-1.7-1-3.1-1h-4.1c-.3 0-.5.2-.6.5L14 15.6c0 .2.1.4.3.4H17l.4-3.4 1.8-2.2 4.7-2.1z">
+                </path>
+                <path fill="#3086C8"
+                  d="M23.9 8.3l-.2.2c-.5 2.8-2.2 3.8-4.6 3.8H18c-.3 0-.5.2-.6.5l-.6 3.9-.2 1c0 .2.1.4.3.4H19c.3 0 .5-.2.5-.4v-.1l.4-2.4v-.1c0-.2.3-.4.5-.4h.3c2.1 0 3.7-.8 4.1-3.2.2-1 .1-1.8-.4-2.4-.1-.5-.3-.7-.5-.8z">
+                </path>
+                <path fill="#012169"
+                  d="M23.3 8.1c-.1-.1-.2-.1-.3-.1-.1 0-.2 0-.3-.1-.3-.1-.7-.1-1.1-.1h-3c-.1 0-.2 0-.2.1-.2.1-.3.2-.3.4l-.7 4.4v.1c0-.3.3-.5.6-.5h1.3c2.5 0 4.1-1 4.6-3.8v-.2c-.1-.1-.3-.2-.5-.2h-.1z">
+                </path>
+              </svg></li>
+            <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                aria-labelledby="pi-diners_club">
+                <title id="pi-diners_club">Diners Club</title>
+                <path opacity=".07"
+                  d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                </path>
+                <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32">
+                </path>
+                <path
+                  d="M12 12v3.7c0 .3-.2.3-.5.2-1.9-.8-3-3.3-2.3-5.4.4-1.1 1.2-2 2.3-2.4.4-.2.5-.1.5.2V12zm2 0V8.3c0-.3 0-.3.3-.2 2.1.8 3.2 3.3 2.4 5.4-.4 1.1-1.2 2-2.3 2.4-.4.2-.4.1-.4-.2V12zm7.2-7H13c3.8 0 6.8 3.1 6.8 7s-3 7-6.8 7h8.2c3.8 0 6.8-3.1 6.8-7s-3-7-6.8-7z"
+                  fill="#3086C8"></path>
+              </svg></li>
+            <li><svg viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-discover" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <title id="pi-discover">Discover</title>
+                <path fill="#000" opacity=".07"
+                  d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                </path>
+                <path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32z" fill="#fff">
+                </path>
+                <path
+                  d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.3 1-2.11-.01-1.63-1.22-2.76-2.96-2.76zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.33.59.84.59 1.37 0 .53-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5zm3.69 2.11c-.64-.24-.83-.4-.83-.69 0-.35.34-.61.8-.61.32 0 .59.13.86.45l.56-.73c-.46-.4-1.01-.61-1.62-.61-.97 0-1.72.68-1.72 1.58 0 .76.35 1.15 1.35 1.51.42.15.63.25.74.31.21.14.32.34.32.57 0 .45-.35.78-.83.78-.51 0-.92-.26-1.17-.73l-.69.67c.49.73 1.09 1.05 1.9 1.05 1.11 0 1.9-.74 1.9-1.81.02-.89-.35-1.29-1.57-1.74zm1.92.65c0 1.62 1.27 2.87 2.9 2.87.46 0 .86-.09 1.34-.32v-1.26c-.43.43-.81.6-1.29.6-1.08 0-1.85-.78-1.85-1.9 0-1.06.79-1.89 1.8-1.89.51 0 .9.18 1.34.62V7.38c-.47-.24-.86-.34-1.32-.34-1.61 0-2.92 1.28-2.92 2.88zm12.76.94l-1.47-3.7h-1.17l2.33 5.64h.58l2.37-5.64h-1.16l-1.48 3.7zm3.13 1.8h3.04v-.93h-1.97v-1.48h1.9v-.93h-1.9V8.1h1.97v-.94h-3.04v5.5zm7.29-3.87c0-1.03-.71-1.62-1.95-1.62h-1.59v5.5h1.07v-2.21h.14l1.48 2.21h1.32l-1.73-2.32c.81-.17 1.26-.72 1.26-1.56zm-2.16.91h-.31V8.03h.33c.67 0 1.03.28 1.03.82 0 .55-.36.85-1.05.85z"
+                  fill="#231F20"></path>
+                <path d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint0_linear)">
+                </path>
+                <path opacity=".65" d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z"
+                  fill="url(#pi-paint1_linear)"></path>
+                <path
+                  d="M36.57 7.506c0-.1-.07-.15-.18-.15h-.16v.48h.12v-.19l.14.19h.14l-.16-.2c.06-.01.1-.06.1-.13zm-.2.07h-.02v-.13h.02c.06 0 .09.02.09.06 0 .05-.03.07-.09.07z"
+                  fill="#231F20"></path>
+                <path
+                  d="M36.41 7.176c-.23 0-.42.19-.42.42 0 .23.19.42.42.42.23 0 .42-.19.42-.42 0-.23-.19-.42-.42-.42zm0 .77c-.18 0-.34-.15-.34-.35 0-.19.15-.35.34-.35.18 0 .33.16.33.35 0 .19-.15.35-.33.35z"
+                  fill="#231F20"></path>
+                <path d="M37 12.984S27.09 19.873 8.976 23h26.023a2 2 0 002-1.984l.024-3.02L37 12.985z" fill="#F48120">
+                </path>
+                <defs>
+                  <linearGradient id="pi-paint0_linear" x1="21.657" y1="12.275" x2="19.632" y2="9.104"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F89F20"></stop>
+                    <stop offset=".25" stop-color="#F79A20"></stop>
+                    <stop offset=".533" stop-color="#F68D20"></stop>
+                    <stop offset=".62" stop-color="#F58720"></stop>
+                    <stop offset=".723" stop-color="#F48120"></stop>
+                    <stop offset="1" stop-color="#F37521"></stop>
+                  </linearGradient>
+                  <linearGradient id="pi-paint1_linear" x1="21.338" y1="12.232" x2="18.378" y2="6.446"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F58720"></stop>
+                    <stop offset=".359" stop-color="#E16F27"></stop>
+                    <stop offset=".703" stop-color="#D4602C"></stop>
+                    <stop offset=".982" stop-color="#D05B2E"></stop>
+                  </linearGradient>
+                </defs>
+              </svg></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

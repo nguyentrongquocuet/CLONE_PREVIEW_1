@@ -1,0 +1,131 @@
+/*
+  PRODUCT
+*/
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  & > .product__img__wrapper {
+    width: 100%;
+  }
+  .product__info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    .product__title {
+      white-space: normal;
+      @include font(11);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .product__price {
+      @include font(11);
+      text-transform: uppercase;
+    }
+
+    .product__desc {
+      text-transform: none;
+      margin: 24px 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color, black);
+    }
+  }
+}
+
+.product__wrapper {
+  display: inline-flex;
+  width: 62%;
+  margin: 0 12px;
+  &:first-child {
+    margin-left: 19%;
+  }
+  &:last-child {
+    margin-right: 19%;
+  }
+  @media screen and (min-width: $mobile) {
+    width: 48%;
+    padding: 0 15px;
+    margin: 0px;
+    &:first-child {
+      margin-left: 26%;
+    }
+    &:last-child {
+      margin-right: 26%;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: calc(100% / 3);
+    padding: 0 24px;
+    &:first-child {
+      margin-left: unset;
+    }
+    &:last-child {
+      margin-right: unset;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 25%;
+    padding: 0 24px;
+    // margin: 0 40px;
+    &:first-child {
+      margin-left: unset;
+    }
+    &:last-child {
+      margin-right: unset;
+    }
+  }
+}
+
+.product__link__wrapper {
+  margin-top: 34px;
+}
+
+.product__colors {
+  ul {
+    display: flex;
+    li + li {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.product__color {
+  width: 36px;
+  height: 36px;
+}
+
+.product__color.is-selected {
+  outline: 1px solid var(--product-color-selected, black);
+  outline-offset: var(--product-color-selected-outline-offset, 0.2rem);
+  // border-spacing: 1.2rem;
+}
+
+.product.has-fullcontent {
+  @media screen and (min-width: $mobile + 1px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: row;
+    max-width: 880px;
+    grid-gap: 4rem;
+    gap: 4rem;
+    .product__info__container {
+      padding: 0;
+      .product__info {
+        margin-top: 0;
+      }
+    }
+    .product__image__wrapper {
+      padding: 0;
+    }
+    .product__img {
+      margin-bottom: auto;
+    }
+  }
+}

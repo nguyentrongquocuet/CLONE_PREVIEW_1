@@ -1,0 +1,61 @@
+/*
+  BLOCK
+*/
+.block {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.is-inline {
+  display: inline-block;
+  width: fit-content;
+}
+
+.block.is-fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+.block.is-slide {
+  display: inline-block;
+}
+
+.block.is-timeline {
+  height: 540px;
+  width: 100%;
+}
+.block.is-product {
+  width: 62%;
+}
+
+.block.has-bg-img {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block.pad-xs {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.block.pad-s {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.block.pad-m {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.block.mar-s {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.block.can-expand {
+  flex-grow: 1;
+}

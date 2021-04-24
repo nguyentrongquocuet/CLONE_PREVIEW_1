@@ -1,0 +1,63 @@
+//Settings global
+* {
+  font-family: "DIN 30640 Std Neuzeit Grotesk Light";
+  font-weight: 300;
+  // font-style: normal;
+  @include font();
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--link-color, black), 0.6);
+  text-underline-position: under;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+//FONT FACE
+
+html {
+  line-height: 1.65;
+}
+
+button,
+span,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // text-transform: uppercase;
+  color: var(--color);
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+//ARIA ATTRIBUTE
+[aria-hidden="true"].hidable {
+  display: none;
+}

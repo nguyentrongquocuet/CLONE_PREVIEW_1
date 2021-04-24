@@ -1,0 +1,26 @@
+.desc {
+  white-space: normal;
+  text-transform: none;
+  letter-spacing: unset;
+  ::first-letter {
+    text-transform: uppercase;
+  }
+  @extend .desc, .is-medium;
+}
+
+.desc.is-left {
+  text-align: left;
+}
+
+.desc.is-medium {
+  @include font(14);
+}
+
+.desc.is-small {
+  @include font(12);
+}
+
+.desc + .desc {
+  display: inline-block;
+  margin-top: 1.6em;
+}

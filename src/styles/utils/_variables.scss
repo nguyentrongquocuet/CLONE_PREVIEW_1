@@ -1,0 +1,16 @@
+$font-sizes: 11px, 12px, 14px, 15px, 18px, 20px;
+$line-heights: 18px, 20px, 23px, 25px, 30px, 33px;
+
+$size-lineheight: (
+  11: 18px,
+  12: 20px,
+  14: 23px,
+  15: 25px,
+  18: 30px,
+  20: 33px,
+);
+
+$mobile: 640px;
+// tablet: 768px,
+$tablet: 1008px;
+$desktop: 1140px;

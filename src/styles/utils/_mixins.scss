@@ -1,0 +1,64 @@
+@mixin font($size: 14, $type: "upper", $space: 0.2) {
+  font-size: $size * 1px;
+  // letter-spacing: $space * 1rem;
+  line-height: getLineHeight($size);
+}
+
+@mixin pseudo($absolute: true) {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  @if $absolute {
+    position: absolute;
+  }
+}
+
+// //large than laptop, laptop-width and up
+// @mixin desktopUp {
+//   @media screen and (min-width: getBP("desktop")) {
+//     & {
+//       @content;
+//     }
+//   }
+// }
+
+// @mixin tabletToDesktop {
+//   @media screen and (min-width: getBP("tablet")+1px) and (max-width: getBP("desktop")-1px) {
+//     & {
+//       @content;
+//     }
+//   }
+// }
+
+// @mixin mobileToDesktop {
+//   @media screen and (min-width: getBP("mobile")+1px) and (max-width: getBP("desktop")-1px) {
+//     & {
+//       @content;
+//     }
+//   }
+// }
+
+// //large than tablet, tablet-width and up,
+// @mixin tabletUp {
+//   @media screen and (min-width: getBP("tablet")) {
+//     & {
+//       @content;
+//     }
+//   }
+// }
+
+// @mixin mobileToTablet {
+//   @media screen and (min-width: getBP("mobile")+1px) and (max-width: getBP("tablet")-1px) {
+//     & {
+//       @content;
+//     }
+//   }
+// }
+
+// //large than mobile, mobile-width and up
+// @mixin mobileUp {
+//   @media screen and (min-width: getBP("mobile")) {
+//     @content;
+//   }
+// }

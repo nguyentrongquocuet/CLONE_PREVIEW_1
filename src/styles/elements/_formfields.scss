@@ -1,0 +1,22 @@
+.input {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 0;
+  border: 1px solid var(--border-color, black);
+  width: 100%;
+  line-height: normal;
+  resize: none;
+  transition: border-color 0.1s ease-in-out;
+  background: transparent;
+  outline: none;
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.formfield + .formfield {
+  margin-top: 2rem;
+}

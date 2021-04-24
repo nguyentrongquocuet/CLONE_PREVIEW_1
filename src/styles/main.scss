@@ -1,0 +1,29 @@
+/// File này chỉ import
+/// Không viết vào đây
+/// Thiếu structure gì cứ tự bổ sung
+@import "./utils";
+
+/// Base
+@import "./base/reset";
+@import "./base/typography";
+@import "./base/global";
+@import "./layout";
+
+/// Components
+@import "./elements";
+@import "./components";
+
+/// Layout
+
+/// Theme
+
+/// Utils
+// @import "./utils/functions";
+// @import "./utils/helpers";
+
+/// Vendor
+
+/// Section viết vào đây
+// @import "./sections/section-test";
+
+// @import "./general";

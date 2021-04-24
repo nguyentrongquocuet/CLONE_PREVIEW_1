@@ -1,0 +1,179 @@
+/*
+  SECTION
+*/
+.section {
+  & > .section__header {
+    margin-bottom: 40px;
+    text-align: center;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 70px;
+    }
+  }
+  & > .section__body {
+    display: block;
+    text-align: center;
+  }
+}
+.section__footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.section.has-pad {
+  padding: 50px 0;
+  @media screen and (min-width: $tablet) {
+    padding: 80px 0;
+  }
+}
+
+.section.is-hero {
+  // width: 100vw;
+  height: 100vh;
+}
+
+.section__body.is-fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+//SECTION WITH SLOGAN INSIDE
+.slogan-section {
+  & > .slogan-section__body {
+    height: 480px;
+    display: grid;
+    place-items: center;
+  }
+  .slogan-section__img__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .slogan-section__content {
+    position: relative;
+    z-index: 1;
+    margin: 0 60px;
+    background-color: white;
+    padding: 20px 0;
+    @media screen and (min-width: $mobile + 1px) {
+      max-width: 380px;
+      padding: 48px 15px;
+    }
+  }
+}
+
+//ARTICLE SECTION
+
+.article {
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.article-section__body {
+  max-width: 1260px;
+  margin: 0 auto;
+  @media screen and (min-width: $mobile) {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    .article:nth-child(2n) {
+      padding-left: 2rem;
+    }
+    .article:nth-child(2n + 1) {
+      padding-right: 2rem;
+    }
+  }
+}
+
+//SHOP THE LOOK SECTION
+.image__link-anchor {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: whitesmoke;
+  perspective: 8px;
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  box-shadow: 2px 2px solid white;
+  cursor: pointer;
+  &::after {
+    @include pseudo();
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    left: -50%;
+    top: -50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    animation: breath 1s linear infinite alternate;
+  }
+}
+
+@keyframes breath {
+  from {
+    transform-origin: center;
+    transform: scale(1);
+  }
+  to {
+    transform-origin: center;
+    transform: scale(1.2);
+  }
+}
+
+.shop-the-look.container {
+  @media screen and (min-width: $mobile + 1px) {
+    // padding-left: 90px;
+    // padding-right: 90px;
+    max-width: 1260px;
+    margin: 0 auto;
+    .shop-the-look__footer {
+      margin-top: 40px;
+    }
+    .shop-the-look__item {
+      height: 600px;
+    }
+  }
+  @media screen and (min-width: $tablet + 1px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+    align-items: center;
+    .shop-the-look__item {
+      height: 413px;
+      padding: 0 30px;
+    }
+  }
+}
+
+.shop-the-look__info.container {
+  header {
+    display: none;
+  }
+  .shop-the-look__main {
+    .product {
+      display: none;
+    }
+    @media screen and (min-width: $tablet + 1px) {
+      .product {
+        display: flex;
+      }
+    }
+  }
+}
+
+.shop-the-look__item {
+  height: 400px;
+  // padding: 0 24px;
+}
+.shop-the-look__footer {
+  // padding: 0 24px;
+}
+
+.gift-card-img__wrapper {
+  padding: 0 24px;
+}
+
+.has-border-bottom {
+  border-bottom: 1px solid var(--border-color, black);
+}

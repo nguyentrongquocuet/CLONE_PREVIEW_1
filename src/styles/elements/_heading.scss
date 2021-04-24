@@ -1,0 +1,57 @@
+.heading {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  white-space: wrap;
+}
+
+.heading.is-sub-header {
+  margin-top: -0.325em;
+  &.is-reversed {
+    margin-top: 0;
+    margin-bottom: -0.325em;
+  }
+}
+
+.heading.is-header {
+  margin-top: 16px;
+  &.is-reversed {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.heading.is-uppercase {
+  text-transform: uppercase;
+}
+
+.heading.is-left {
+  text-align: left;
+}
+
+.heading.h1 {
+  @include font(20);
+}
+
+.heading.h2 {
+  @include font(18);
+}
+
+.heading.h3 {
+  @include font(16);
+}
+
+.heading.h4 {
+  @include font(15);
+}
+
+.heading.h6 {
+  @include font(12);
+}
+
+.heading.h7 {
+  @include font(11);
+}
+
+.heading.h8 {
+  @include font(10);
+}

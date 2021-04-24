@@ -1,0 +1,133 @@
+/*
+  BUTTON
+*/
+* {
+  --btn-bottom-effect-color: black;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  user-select: none;
+  padding: 14px 28px;
+  width: fit-content;
+  transition: all 0.5;
+  border: none;
+  // background-color: var(--btn-bg, transparent);
+  color: var(--btn-text-color, var(--text-color, black));
+  z-index: 0;
+  border: 1px solid var(--btn-bg, transparent);
+  @extend .btn, .has-spacing;
+  // @extend .btn, .is-small;
+}
+
+.btn.has-spacing {
+  letter-spacing: 0.2rem;
+}
+
+.btn.is-fullheight {
+  height: 100%;
+}
+
+.btn.is-animated {
+  transition: all 0.3s; //TODO:
+}
+
+.btn.text-only {
+  border: none;
+  outline: none;
+}
+
+.btn.is-contained {
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-border, transparent);
+}
+
+.btn.is-outlined {
+  background-color: transparent;
+  border: 1px solid var(--btn-border, var(--btn-bg, white));
+}
+
+.btn.is-primary {
+  --btn-bg: white;
+}
+
+.btn.is-secondary {
+  --btn-bg: #f5db8b;
+}
+
+.btn.is-fullwidth {
+  width: 100%;
+}
+
+.btn.is-small {
+  @include font(12);
+}
+
+.btn.is-medium {
+  padding: 14px 28px; //default
+  @include font(12);
+}
+
+.btn.is-large {
+}
+
+.btn.is-cta {
+  margin-top: 20px;
+}
+
+.btn.is-eff-a {
+  outline: none;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--btn-bg, white);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.5s;
+    transform-origin: left center;
+    transform: scale(1, 1);
+  }
+
+  &:hover::after {
+    transform-origin: right center;
+    transform: scale(0, 1);
+  }
+
+  &:hover {
+    background: transparent;
+    color: var(--btn-bg);
+  }
+}
+
+.btn.is-eff-b {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    @include pseudo();
+    height: 0.1rem;
+    left: 0;
+    bottom: 0.2rem;
+    background-color: var(
+      --btn-bottom-effect-color,
+      var(--btn-text-color, black)
+    );
+    z-index: -1;
+    left: -100%;
+    transition: left 0.3s;
+  }
+  &:hover::after {
+    left: 0;
+  }
+}

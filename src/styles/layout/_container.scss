@@ -1,0 +1,53 @@
+/* 
+  CONTAINER
+*/
+
+.container {
+  width: 100%;
+  display: block;
+  padding: 0 24px;
+
+  @media screen and (min-width: $mobile) {
+    padding: 0 50px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding: 0 80px;
+  }
+}
+
+.has-inline-list {
+  white-space: nowrap;
+  overflow: auto;
+  font-size: 0;
+  @media screen and (min-width: $tablet) {
+    padding: 0 90px;
+  }
+}
+
+.container.is-gridview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container.is-fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+.container.is-slide-show {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.container.can-be-grid {
+  // mobile up
+  @media screen and (min-width: $mobile + 1px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
