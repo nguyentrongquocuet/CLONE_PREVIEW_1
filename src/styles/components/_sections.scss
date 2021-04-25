@@ -128,9 +128,10 @@
     max-width: 1260px;
     margin: 0 auto;
     .shop-the-look__footer {
-      margin-top: 40px;
+      // margin-top: 40px;
     }
     .shop-the-look__item {
+      margin-left: auto;
       height: 600px;
     }
   }
@@ -140,8 +141,8 @@
     grid-gap: 4rem;
     align-items: center;
     .shop-the-look__item {
-      height: 413px;
-      padding: 0 30px;
+      height: 513px;
+      // padding: 0 30px;
     }
   }
 }
@@ -155,6 +156,7 @@
       display: none;
     }
     @media screen and (min-width: $tablet + 1px) {
+      max-width: 270px;
       .product {
         display: flex;
       }
@@ -164,8 +166,15 @@
 
 .shop-the-look__item {
   height: 400px;
+  width: fit-content;
+  // margin: 0 auto;
   // padding: 0 24px;
 }
+
+.shop-the-look__img {
+  width: fit-content;
+}
+
 .shop-the-look__footer {
   // padding: 0 24px;
 }

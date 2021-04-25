@@ -19,6 +19,7 @@
   z-index: 0;
   border: 1px solid var(--btn-bg, transparent);
   @extend .btn, .has-spacing;
+  @extend .btn, .is-primary;
 }
 
 .btn.has-spacing {
@@ -30,7 +31,7 @@
 }
 
 .btn.is-animated {
-  transition: all 0.3s;:
+  transition: all 0.3s;
 }
 
 .btn.text-only {
