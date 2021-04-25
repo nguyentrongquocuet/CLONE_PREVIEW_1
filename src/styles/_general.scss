@@ -11,12 +11,13 @@ body.overflow-disabled {
   position: fixed;
   z-index: 3;
   top: 0;
-  left: 0;
+  left: -100%;
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.15);
   transition: all 0.25s 0.25s;
   &.is-visible {
     opacity: 1;
     visibility: visible;
+    left: 0;
   }
 }

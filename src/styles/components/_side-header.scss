@@ -7,6 +7,9 @@
   background-color: white;
   width: calc(100vw - 65px);
   transition: left 0.5s ease;
+  @media screen and (min-width: $mobile + 1px) {
+    width: 400px;
+  }
 }
 #sidebar.is-visible {
   left: 0;
