@@ -3,7 +3,7 @@ import { DOMElement } from "src/types/customdom";
 
 const expandedMark = "is-expanded";
 const sidebarSubItemSelector = ".nav__subitem";
-const sidebarItemToggleSelector = ".nav__item__label.collapse-trigger";
+const sidebarItemToggleSelector = ".item__label.collapse-trigger";
 
 type classesConfig = {
   expandedMark: string;

@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  & > .product__img__wrapper {
+  & > .image__wrapper {
     width: 100%;
   }
   .product__info {
@@ -80,7 +80,7 @@
   }
 }
 
-.product__link__wrapper {
+.link__wrapper {
   margin-top: 34px;
 }
 
@@ -115,13 +115,13 @@
     max-width: 880px;
     grid-gap: 4rem;
     gap: 4rem;
-    .product__info__container {
+    .info__container {
       padding: 0;
       .product__info {
         margin-top: 0;
       }
     }
-    .product__image__wrapper {
+    .image__wrapper {
       padding: 0;
     }
     .product__img {
