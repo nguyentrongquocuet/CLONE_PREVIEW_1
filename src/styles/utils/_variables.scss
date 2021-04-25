@@ -14,3 +14,11 @@ $mobile: 640px;
 // tablet: 768px,
 $tablet: 1008px;
 $desktop: 1140px;
+
+body {
+  --btn-bottom-effect-color: black;
+  --navitem-space: 14px;
+  --navsubitem-space: 14px;
+  --sidebar-header-height: 60px;
+  --sidebar-footer-height: 40px;
+}

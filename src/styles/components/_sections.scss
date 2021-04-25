@@ -29,6 +29,7 @@
 .section.is-hero {
   // width: 100vw;
   height: 100vh;
+  --color: #ffffff;
 }
 
 .section__body.is-fullscreen {
@@ -173,6 +174,9 @@
 
 .shop-the-look__img {
   width: fit-content;
+  img {
+    max-width: calc(100vw - 48px);
+  }
 }
 
 .shop-the-look__footer {

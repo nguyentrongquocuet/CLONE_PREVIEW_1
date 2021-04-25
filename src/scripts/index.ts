@@ -1,11 +1,12 @@
-import "../styles/main.scss";
+import "Styles/main.scss";
 import "Scripts/helpers/animationFrame";
+import addCollapseBehavior from "./helpers/addCollapseBehavior";
+import { addSidebarToggle } from "./helpers/addSidebarToggle";
+const sidebarSelector = "#sidebar";
+const sidebarItemSelector = ".nav__item.collapsible";
 
-const sidebarItemClass = "sidebar__item";
-const sidebarSubItemClass = "sidebar__subitem";
-const sidebarItemToggleClass = "sidebar__expand-toggle";
-const sidebarItemSubcontentClass = "sidebar__item__subcontent";
-const expandedMark = "is-expanded";
+// TYPES
+type DOMElement = Element | HTMLElement;
 
 const sidebarItemSpacing = parseInt(
   getCSSVariable("navitem-space").replace("px", "")
@@ -17,6 +18,7 @@ document
   ?.addEventListener("click", (e) => {
     toggleSidebar();
   });
+
 const requestAnimationFrame = window.requestAnimationFrame(animationLoop);
 
 function animationLoop(args: any) {
@@ -36,44 +38,8 @@ function getCSSVariable(variableName: string = "", element?: HTMLElement) {
 
 function toggleSidebar() {}
 
-function extractHeight(element: HTMLElement | null) {
-  if (!element) return 0;
-  const ogHeight = getComputedStyle(element).getPropertyValue("height");
-  const height = parseFloat(ogHeight.replace("px", ""));
-  return height;
-}
+const sidebar = document.querySelector(sidebarSelector) as DOMElement;
 
-const expandSidebarItem = (e: HTMLElement) => {
-  return (event: MouseEvent) => {
-    const subcontentItem = e.querySelector(`.${sidebarItemSubcontentClass}`);
-    if (!subcontentItem || subcontentItem.classList.contains(expandedMark)) {
-      (subcontentItem as HTMLElement).classList.remove(expandedMark);
-      (subcontentItem as HTMLElement).style.overflow = "";
-      (subcontentItem as HTMLElement).style.minHeight = "";
-      return;
-    }
-    const height = extractHeight(e.querySelector("ul"));
-    console.log(height);
-    (subcontentItem as HTMLElement).style.minHeight = height + "px";
-    (subcontentItem as HTMLElement).style.overflow = "visible";
-    (subcontentItem as HTMLElement).classList.add(expandedMark);
-  };
-};
-
-function addSidebarItemEvents(e: Element) {
-  const toggle = e.querySelector(`.${sidebarItemToggleClass}`);
-  toggle?.addEventListener("click", (e) => {
-    (e.currentTarget as HTMLElement).classList.toggle(expandedMark);
-  });
-
-  toggle?.addEventListener(
-    "click",
-    expandSidebarItem(e as HTMLElement) as EventListener
-  );
-}
-
-const sidebar = document.getElementById("side-header");
-
-const sidebarListItem = sidebar?.querySelectorAll(`.${sidebarItemClass}`);
-
-sidebarListItem?.forEach(addSidebarItemEvents);
+const sidebarListItem = sidebar?.querySelectorAll(sidebarItemSelector);
+addCollapseBehavior(sidebarListItem as NodeListOf<Element>);
+addSidebarToggle(sidebar);

@@ -8,6 +8,9 @@
 * {
   box-sizing: border-box;
 }
+body {
+  --color: #303030;
+}
 
 html,
 body {
@@ -17,12 +20,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-a:not(.btn) {
-  text-decoration: underline;
-  text-decoration-color: rgba(var(--link-color, black), 0.6);
-  text-underline-position: under;
 }
 
 ul,

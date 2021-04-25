@@ -1,9 +1,6 @@
 /*
   BUTTON
 */
-* {
-  --btn-bottom-effect-color: black;
-}
 
 .btn {
   display: inline-block;
@@ -63,6 +60,7 @@
 
 .btn.is-small {
   @include font(12);
+  line-height: 14px;
 }
 
 .btn.is-medium {

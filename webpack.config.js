@@ -113,6 +113,7 @@ module.exports = {
       Images: path.resolve(__dirname, "src/images/"),
       Styles: path.resolve(__dirname, "src/styles/"),
       Scripts: path.resolve(__dirname, "src/scripts/"),
+      Types: path.resolve(__dirname, "src/types/"),
     },
     // roots: [path.resolve(__dirname, "./dist/imgs")],
   },

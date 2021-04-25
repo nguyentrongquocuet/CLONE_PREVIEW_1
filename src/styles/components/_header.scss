@@ -11,11 +11,15 @@
   border-bottom: 1px solid var(--border--color, white);
   .alternate {
     display: none;
+    span {
+      line-height: 0;
+    }
     svg {
       transition: fill 0.3s;
       width: 1.5rem;
       height: 1.5rem;
       line-height: 0;
+      fill: var(--text-color-header, white);
     }
   }
   @media screen and (min-width: $mobile + 1px) {
@@ -62,11 +66,11 @@
     visibility: visible;
   }
   .heading {
-    color: black;
+    color: var(--text-color-header, black);
   }
   .alternate {
     svg {
-      fill: black;
+      fill: var(--text-color-header, black);
     }
   }
 }
