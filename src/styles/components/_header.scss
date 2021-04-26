@@ -87,7 +87,11 @@
   flex-wrap: wrap;
 }
 
-.is-nowrap {
+.nav__list .nav__item {
+  cursor: pointer;
+}
+
+.nav__list.is-nowrap {
   flex-wrap: nowrap;
 }
 

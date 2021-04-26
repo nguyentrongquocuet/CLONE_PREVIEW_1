@@ -16,7 +16,7 @@ const blurEffCon = document.querySelector(".has-blur-effect");
 addCollapseBehavior(sidebarListItem as NodeListOf<Element>);
 addSidebarToggle(sidebar);
 
-// addBlurEffect(blurEffCon as DOMElement);
+addBlurEffect(blurEffCon as DOMElement);
 
 // header
 

@@ -61,6 +61,13 @@ body {
   z-index: 1;
   top: 50%;
 }
+.slide * {
+  user-select: none;
+}
+.slide img {
+  pointer-events: none;
+  user-select: none;
+}
 
 .slide__content.is-bottom {
   // justify-content: flex-start;

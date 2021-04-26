@@ -131,9 +131,13 @@
     .shop-the-look__footer {
       // margin-top: 40px;
     }
+
     .shop-the-look__item {
-      margin-left: auto;
+      width: 100%;
       height: 600px;
+      .shop-the-look__img {
+        padding: 24px 0;
+      }
     }
   }
   @media screen and (min-width: $tablet + 1px) {
@@ -143,12 +147,16 @@
     align-items: center;
     .shop-the-look__item {
       height: 513px;
+      margin-left: auto;
       // padding: 0 30px;
+      .shop-the-look__img {
+        padding: 12.5% 0;
+      }
     }
   }
 }
 
-.shop-the-look__info.container {
+.shop-the-look__info {
   header {
     display: none;
   }
