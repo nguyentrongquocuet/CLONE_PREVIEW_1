@@ -64,6 +64,13 @@ function expand(
   return true;
 }
 
+/**
+ * Adds a collapsing behavior to the list of Element
+ * @param listItem Array of Element
+ * @param forceCollapse Forces the collapsing when another has expanded
+ * @param classes Configurations
+ * @returns Nothing
+ */
 function addCollapseBehavior(
   listItem: NodeListOf<Element>,
   forceCollapse = true,
