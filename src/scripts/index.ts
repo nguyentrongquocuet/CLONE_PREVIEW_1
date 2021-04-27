@@ -28,5 +28,10 @@ ApplyHeaderReaction(header as HTMLElement, 100, "has-no-transparent");
 
 addScrollEffect(
   document.querySelector(".slideshow__container.category-slideshow") as Element,
-  { breakpoint: 641, reconnect: true }
+  {
+    breakpoint: 641,
+    reconnect: true,
+    slideSelector: ".slide",
+    resetApproach: "order",
+  }
 );

@@ -2,6 +2,8 @@ type ScrollEffectConfig = {
   breakpoint?: number;
   reconnect?: boolean;
   batchScrollNumber?: number;
+  slideSelector?: string;
+  resetApproach?: "order" | "redistribute";
 };
 
 /**
@@ -12,12 +14,23 @@ type ScrollEffectConfig = {
  *@returns Nothing
  */
 function addScrollEffect(container: Element, config: ScrollEffectConfig): void {
-  const { breakpoint, reconnect, batchScrollNumber = 2 } = config;
+  const {
+    breakpoint,
+    reconnect,
+    batchScrollNumber = 2,
+    slideSelector = ".slide",
+  } = config;
   let disconnected = true;
   let observer: IntersectionObserver;
   if (breakpoint && window.outerWidth > breakpoint) {
     if (!reconnect) {
       return;
+    } else {
+      const slideList = container.querySelectorAll(slideSelector);
+      slideList.forEach((element, index) => {
+        (element as HTMLElement).dataset.index = index + "";
+        // observer.observe(element);
+      });
     }
   } else {
     observer = setup(container, batchScrollNumber, false);
@@ -27,7 +40,7 @@ function addScrollEffect(container: Element, config: ScrollEffectConfig): void {
   if (breakpoint) {
     const onResize = (e: Event) => {
       if (breakpoint && (e.target as Window).outerWidth > breakpoint) {
-        if (!disconnected) resetToDefault(container, observer);
+        if (!disconnected) resetToDefault(container, observer, config);
         disconnected = true;
         if (!reconnect) {
           window.removeEventListener("resize", onResize);
@@ -44,22 +57,39 @@ function addScrollEffect(container: Element, config: ScrollEffectConfig): void {
   // function reconnect
 }
 
-function resetToDefault(container: Element, observer: IntersectionObserver) {
+function resetToDefault(
+  container: Element,
+  observer: IntersectionObserver,
+  config: ScrollEffectConfig
+) {
+  const { slideSelector = ".slide", resetApproach } = config;
   observer.disconnect();
-  container.querySelectorAll(".slide").forEach((e) => {
+  container.querySelectorAll(slideSelector).forEach((e) => {
     const ogIndex = (e as HTMLElement).dataset.index;
     // (e as HTMLElement).style.order = "" + ogIndex;
     // Redistribute
   });
-  const slideList = container.querySelectorAll(".slide");
-  const l = slideList.length;
-  for (let i = 0; i < l; i++) {
-    for (let j = i; j < l; j++) {
-      if (
-        parseInt((slideList[i] as HTMLElement).dataset.index as string) >
-        parseInt((slideList[j] as HTMLElement).dataset.index as string)
-      ) {
-        container.append(slideList[i]);
+
+  const slideList = container.querySelectorAll(slideSelector);
+  switch (resetApproach) {
+    case "order":
+      slideList.forEach((e) => {
+        (e as HTMLElement).style.order =
+          (e as HTMLElement).dataset.index || "1";
+      });
+      break;
+    default: {
+      const l = slideList.length;
+
+      for (let i = 0; i < l; i++) {
+        for (let j = i; j < l; j++) {
+          if (
+            parseInt((slideList[i] as HTMLElement).dataset.index as string) >
+            parseInt((slideList[j] as HTMLElement).dataset.index as string)
+          ) {
+            container.append(slideList[i]);
+          }
+        }
       }
     }
   }
@@ -77,7 +107,7 @@ function setup(
   if (isReconnecting) {
     slideList.forEach((element, index) => {
       observer.observe(element);
-      // (element as HTMLElement).style.order = "";
+      (element as HTMLElement).style.order = "";
     });
   } else {
     slideList.forEach((element, index) => {
