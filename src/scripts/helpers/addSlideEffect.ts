@@ -40,7 +40,12 @@ const defaultClassesConfig: BlurEffectConfig = {
   navSelectedToken: "is-selected",
   hasNav: false,
 };
-
+/**
+ * Actually adding fade effect to the slide show, please dont pay any attension to the function name
+ * @param {DOMElement} slideShowContainer
+ * @param {Partial<BlurEffectConfig>} config
+ * @returns Nothing
+ */
 export function addBlurEffect(
   slideShowContainer: DOMElement,
   config?: Partial<BlurEffectConfig>
@@ -62,32 +67,6 @@ export function addBlurEffect(
     nextSlide(step);
   });
 }
-
-// export function addNavigationSlideEffect(
-//   slideShowContainer: DOMElement,
-//   navigationContainer: DOMElement,
-//   config: Partial<BlurEffectConfig>,
-//   navConfig?: NavigationEffectConfig
-// ) {
-//   if (!slideShowContainer) return false;
-
-//   const { nextSlide } = slideHandler(
-//     slideShowContainer,
-//     config as BlurEffectConfig
-//   );
-//   if (!nextSlide) {
-//     console.warn("THE FUNCTION HAS NO EFFECT ON ", slideShowContainer);
-//     return null;
-//   }
-//   onClickNavigation(
-//     navigationContainer as HTMLElement,
-//     (step: number) => {
-//       console.log("STEP", step);
-//       nextSlide(step);
-//     },
-//     navConfig
-//   );
-// }
 
 // TODO: ADD NAVIGATION SYNC
 function slideHandler(container: DOMElement, config: BlurEffectConfig) {

@@ -52,7 +52,7 @@ addScrollEffect(
   document.querySelector(".slideshow__container.category-slideshow") as Element,
   {
     breakpoint: 641,
-    reconnect: true,
+    autoReconnect: true,
     slideSelector: ".slide",
     resetApproach: "reorder",
     hasNav: true,
