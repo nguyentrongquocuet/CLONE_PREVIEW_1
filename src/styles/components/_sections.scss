@@ -42,6 +42,10 @@
   height: 100%;
 }
 
+.section__body.has-slideshow {
+  position: relative;
+}
+
 //SECTION WITH SLOGAN INSIDE
 .slogan-section {
   & > .slogan-section__body {

@@ -3,10 +3,7 @@ import "Scripts/helpers/animationFrame";
 import addCollapseBehavior from "./helpers/addCollapseBehavior";
 import { addSidebarToggle } from "./helpers/addSidebarToggle";
 import { DOMElement } from "src/types/customdom";
-import {
-  addBlurEffect,
-  addNavigationSlideEffect,
-} from "./helpers/addSlideEffect";
+import { addBlurEffect } from "./helpers/addSlideEffect";
 import ApplyHeaderReaction from "./helpers/addHeaderReaction";
 import addScrollEffect from "./helpers/addScrollEffect";
 const sidebarSelector = "#sidebar";
@@ -24,24 +21,26 @@ addCollapseBehavior(sidebarListItem as NodeListOf<Element>);
 addSidebarToggle(sidebar);
 // blurEffCon.forEach((e) => addBlurEffect(e));
 
-addBlurEffect(blurEffCon as DOMElement);
+addBlurEffect(blurEffCon as DOMElement, {
+  rootElement: document.querySelector(".hero__slideshow") as HTMLElement,
+  hasNav: true,
+  navContainerSelector: ".slide__nav",
+  navSelector: ".slide__navitem",
+  navSelectedToken: "is-selected",
+});
 
-addNavigationSlideEffect(
-  timeLineShow as DOMElement,
-  timeLineNavigator as DOMElement,
-  {
-    slideContentSelector: ".timeline__content",
-    slideSelector: ".item__wrapper",
-    slideContentTriggerToken: "is-animated",
-    slideShowedToken: "is-selected",
-    transitionTime: 1,
-    rootElement: document.querySelector(".timeline-section") as HTMLElement,
-    hasNav: true,
-    navContainerSelector: ".timeline__tab",
-    navSelector: ".timeline__tabitem",
-    navSelectedToken: "is-selected",
-  }
-);
+addBlurEffect(timeLineShow as DOMElement, {
+  slideContentSelector: ".timeline__content",
+  slideSelector: ".item__wrapper",
+  slideContentTriggerToken: "is-animated",
+  slideShowedToken: "is-selected",
+  transitionTime: 1,
+  rootElement: document.querySelector(".timeline-section") as HTMLElement,
+  hasNav: true,
+  navContainerSelector: ".timeline__tab",
+  navSelector: ".timeline__tabitem",
+  navSelectedToken: "is-selected",
+});
 // header
 
 const header = document.querySelector("header");
@@ -55,7 +54,14 @@ addScrollEffect(
     breakpoint: 641,
     reconnect: true,
     slideSelector: ".slide",
-    resetApproach: "order",
+    resetApproach: "reorder",
+    hasNav: true,
+    navContainerSelector: ".slide__nav",
+    navSelector: ".slide__navitem",
+    navSelectedToken: "is-selected",
+    rootElement: document.querySelector(
+      ".collection-list > .section__body"
+    ) as HTMLElement,
   }
 );
 

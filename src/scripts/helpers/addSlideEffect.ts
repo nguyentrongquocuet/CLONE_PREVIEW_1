@@ -1,9 +1,11 @@
+import { has } from "lodash";
 import { DOMElement } from "src/types/customdom";
 import {
   NavigationEffectConfig,
   onClickNavigation,
   onHorizontalSlide,
 } from "./addEventTrigger";
+import { fillConfig } from "./fillConfig";
 
 type BlurEffectConfig = {
   rootElement: HTMLElement;
@@ -41,11 +43,16 @@ const defaultClassesConfig: BlurEffectConfig = {
 
 export function addBlurEffect(
   slideShowContainer: DOMElement,
-  config: BlurEffectConfig = defaultClassesConfig
+  config?: Partial<BlurEffectConfig>
 ) {
+  if (!config) config = defaultClassesConfig;
+  const filledConfig = fillConfig<BlurEffectConfig>(
+    config,
+    defaultClassesConfig
+  );
   if (!slideShowContainer) return false;
 
-  const { nextSlide } = slideHandler(slideShowContainer, config);
+  const { nextSlide } = slideHandler(slideShowContainer, filledConfig);
   if (!nextSlide) {
     console.warn("THE FUNCTION HAS NO EFFECT ON ", slideShowContainer);
     return null;
@@ -56,31 +63,31 @@ export function addBlurEffect(
   });
 }
 
-export function addNavigationSlideEffect(
-  slideShowContainer: DOMElement,
-  navigationContainer: DOMElement,
-  config: Partial<BlurEffectConfig>,
-  navConfig?: NavigationEffectConfig
-) {
-  if (!slideShowContainer) return false;
+// export function addNavigationSlideEffect(
+//   slideShowContainer: DOMElement,
+//   navigationContainer: DOMElement,
+//   config: Partial<BlurEffectConfig>,
+//   navConfig?: NavigationEffectConfig
+// ) {
+//   if (!slideShowContainer) return false;
 
-  const { nextSlide } = slideHandler(
-    slideShowContainer,
-    config as BlurEffectConfig
-  );
-  if (!nextSlide) {
-    console.warn("THE FUNCTION HAS NO EFFECT ON ", slideShowContainer);
-    return null;
-  }
-  onClickNavigation(
-    navigationContainer as HTMLElement,
-    (step: number) => {
-      console.log("STEP", step);
-      nextSlide(step);
-    },
-    navConfig
-  );
-}
+//   const { nextSlide } = slideHandler(
+//     slideShowContainer,
+//     config as BlurEffectConfig
+//   );
+//   if (!nextSlide) {
+//     console.warn("THE FUNCTION HAS NO EFFECT ON ", slideShowContainer);
+//     return null;
+//   }
+//   onClickNavigation(
+//     navigationContainer as HTMLElement,
+//     (step: number) => {
+//       console.log("STEP", step);
+//       nextSlide(step);
+//     },
+//     navConfig
+//   );
+// }
 
 // TODO: ADD NAVIGATION SYNC
 function slideHandler(container: DOMElement, config: BlurEffectConfig) {
@@ -92,6 +99,7 @@ function slideHandler(container: DOMElement, config: BlurEffectConfig) {
     navSelector,
     navSelectedToken,
     rootElement,
+    containerAnimatedToken,
   } = config;
   if (!slideSelector) {
     console.warn(
@@ -102,7 +110,7 @@ function slideHandler(container: DOMElement, config: BlurEffectConfig) {
   (container as HTMLElement).style.position = "relative";
   (container as HTMLElement).style.zIndex = "0";
   (container as HTMLElement).style.overflow = "hidden";
-  container.classList.add("has-scaling-effect");
+  container.classList.add(containerAnimatedToken);
 
   const navContainer = rootElement.querySelector(navContainerSelector);
   const navList = navContainer?.querySelectorAll(
@@ -115,21 +123,39 @@ function slideHandler(container: DOMElement, config: BlurEffectConfig) {
   if (!slideList || !slideLength) return {};
 
   let visibleSlide = beginSlide || 0;
-  if (hasNav) navList[visibleSlide].classList.add(navSelectedToken);
+  if (hasNav) {
+    navList[visibleSlide].classList.add(navSelectedToken);
+    navList.forEach((navigator) => {
+      navigator.addEventListener("click", (e) => {
+        const step = calculateStep(navigator);
+        // console.log("EMBEDDED ", step);
+        nextSlide(step);
+      });
+    });
+  }
   const { setupSlide, hide, show } = generateHelperFunction(config);
 
   slideList.forEach(setupSlide);
 
-  return {
-    nextSlide(step: number = 1) {
-      if (step) {
-        hide(slideList[visibleSlide] as HTMLElement);
+  function calculateStep(e: HTMLElement) {
+    return getDataIndex(e) - visibleSlide;
+  }
 
-        visibleSlide = (visibleSlide + step + slideLength) % slideLength;
-        console.log("CHECK_VISIBLE_SLIDE", visibleSlide);
-        show(slideList[visibleSlide] as HTMLElement);
-      }
-    },
+  function getDataIndex(e: HTMLElement) {
+    return parseInt(e.dataset.index || "0");
+  }
+
+  function nextSlide(step: number = 1) {
+    if (step) {
+      hide(slideList[visibleSlide] as HTMLElement);
+
+      visibleSlide = (visibleSlide + step + slideLength) % slideLength;
+      // console.log("CHECK_VISIBLE_SLIDE", visibleSlide);
+      show(slideList[visibleSlide] as HTMLElement);
+    }
+  }
+  return {
+    nextSlide,
   };
 }
 
@@ -154,7 +180,6 @@ function generateHelperFunction(config: BlurEffectConfig) {
   const navList = navContainer?.querySelectorAll(
     navSelector
   ) as NodeListOf<HTMLElement>;
-
   return {
     hide(slide: HTMLElement) {
       slide.style.opacity = "0";
@@ -191,7 +216,7 @@ function generateHelperFunction(config: BlurEffectConfig) {
     },
     setupSlide(slide: Element, index: number, slideList: NodeListOf<Element>) {
       const slideClone = <HTMLElement>slide;
-      console.log(slide, index, beginSlide);
+      // console.log(slide, index, beginSlide);
       if (index === beginSlide) {
         slideClone.classList.add(slideShowedToken);
         slide
@@ -206,6 +231,9 @@ function generateHelperFunction(config: BlurEffectConfig) {
       if (hasNav) {
         // indexing for navigating
         slideClone.dataset.index = "" + index;
+        navList[index].dataset.index = "" + index;
+        if (index === beginSlide)
+          navList[index].classList.add(navSelectedToken);
       }
       (slideClone.querySelector(
         slideContentSelector
