@@ -1,47 +1,98 @@
 import { DOMElement } from "src/types/customdom";
-import { onHorizontalSlide } from "./addEventTrigger";
+import {
+  NavigationEffectConfig,
+  onClickNavigation,
+  onHorizontalSlide,
+} from "./addEventTrigger";
 
 type BlurEffectConfig = {
+  rootElement: HTMLElement;
+  containerAnimatedToken: string;
   slideSelector: string;
   slideContentSelector: string;
-  beginZIndex: number;
   slideContentTriggerToken: string;
   slideShowedToken: string;
+  beginZIndex: number;
   beginSlide: number;
   transitionTime: number;
   transitionDelay: number;
+  navContainerSelector: string;
+  navSelector: string;
+  navSelectedToken: string;
+  hasNav: boolean;
 };
 
 const defaultClassesConfig: BlurEffectConfig = {
+  rootElement: document.body,
   slideSelector: ".slide",
   slideContentSelector: ".slide__content",
+  containerAnimatedToken: "has-scaling-effect",
   transitionTime: 1,
   beginZIndex: 0,
   slideContentTriggerToken: "is-animated",
   slideShowedToken: "is-visible",
   beginSlide: 0,
   transitionDelay: 0.4,
+  navContainerSelector: "dasdad",
+  navSelector: "div",
+  navSelectedToken: "is-selected",
+  hasNav: false,
 };
 
-function addBlurEffect(
+export function addBlurEffect(
   slideShowContainer: DOMElement,
-  classes: BlurEffectConfig = defaultClassesConfig
+  config: BlurEffectConfig = defaultClassesConfig
 ) {
   if (!slideShowContainer) return false;
 
-  const { nextSlide } = slideHandler(slideShowContainer, classes);
+  const { nextSlide } = slideHandler(slideShowContainer, config);
   if (!nextSlide) {
     console.warn("THE FUNCTION HAS NO EFFECT ON ", slideShowContainer);
     return null;
   }
 
-  onHorizontalSlide(slideShowContainer, "50%", (direction: number) => {
-    nextSlide(direction);
+  onHorizontalSlide(slideShowContainer, "50%", (step: number) => {
+    nextSlide(step);
   });
 }
 
-function slideHandler(container: DOMElement, classes: BlurEffectConfig) {
-  const { slideSelector, beginSlide } = classes;
+export function addNavigationSlideEffect(
+  slideShowContainer: DOMElement,
+  navigationContainer: DOMElement,
+  config: Partial<BlurEffectConfig>,
+  navConfig?: NavigationEffectConfig
+) {
+  if (!slideShowContainer) return false;
+
+  const { nextSlide } = slideHandler(
+    slideShowContainer,
+    config as BlurEffectConfig
+  );
+  if (!nextSlide) {
+    console.warn("THE FUNCTION HAS NO EFFECT ON ", slideShowContainer);
+    return null;
+  }
+  onClickNavigation(
+    navigationContainer as HTMLElement,
+    (step: number) => {
+      console.log("STEP", step);
+      nextSlide(step);
+    },
+    navConfig
+  );
+}
+
+// TODO: ADD NAVIGATION SYNC
+function slideHandler(container: DOMElement, config: BlurEffectConfig) {
+  const {
+    slideSelector,
+    beginSlide,
+    hasNav,
+    navContainerSelector,
+    navSelector,
+    navSelectedToken,
+    rootElement,
+  } = config;
   if (!slideSelector) {
     console.warn(
       "BETTER PROVIDE slideSelector, otherwise div will become selector"
@@ -53,38 +104,57 @@ function slideHandler(container: DOMElement, classes: BlurEffectConfig) {
   (container as HTMLElement).style.overflow = "hidden";
   container.classList.add("has-scaling-effect");
 
+  const navContainer = rootElement.querySelector(navContainerSelector);
+  const navList = navContainer?.querySelectorAll(
+    navSelector
+  ) as NodeListOf<HTMLElement>;
+
   const slideList = container.querySelectorAll(slideSelector);
   const slideLength = slideList.length;
+
   if (!slideList || !slideLength) return {};
 
   let visibleSlide = beginSlide || 0;
-
-  const { setupSlide, hide, show } = generateHelperFunction(classes);
+  if (hasNav) navList[visibleSlide].classList.add(navSelectedToken);
+  const { setupSlide, hide, show } = generateHelperFunction(config);
 
   slideList.forEach(setupSlide);
 
   return {
     nextSlide(step: number = 1) {
-      hide(slideList[visibleSlide] as HTMLElement);
+      if (step) {
+        hide(slideList[visibleSlide] as HTMLElement);
 
-      visibleSlide = (visibleSlide + step + slideLength) % slideLength;
-      console.log("CHECK_VISIBLE_SLIDE", visibleSlide);
-      show(slideList[visibleSlide] as HTMLElement);
+        visibleSlide = (visibleSlide + step + slideLength) % slideLength;
+        console.log("CHECK_VISIBLE_SLIDE", visibleSlide);
+        show(slideList[visibleSlide] as HTMLElement);
+      }
     },
   };
 }
 
-function generateHelperFunction(classes: BlurEffectConfig) {
+function generateHelperFunction(config: BlurEffectConfig) {
   const {
     // slideSelector,
     // beginZIndex,
     slideContentSelector,
     slideContentTriggerToken,
     slideShowedToken,
-    beginSlide,
+    beginSlide = 0,
     transitionTime = 0,
     transitionDelay = 0,
-  } = classes;
+    hasNav,
+    navContainerSelector,
+    navSelectedToken,
+    navSelector,
+    rootElement,
+  } = config;
+
+  const navContainer = rootElement.querySelector(navContainerSelector);
+  const navList = navContainer?.querySelectorAll(
+    navSelector
+  ) as NodeListOf<HTMLElement>;
+
   return {
     hide(slide: HTMLElement) {
       slide.style.opacity = "0";
@@ -94,9 +164,10 @@ function generateHelperFunction(classes: BlurEffectConfig) {
       slide
         .querySelector(slideContentSelector)
         ?.classList.remove(slideContentTriggerToken);
-      (slide.querySelector(
-        slideContentSelector
-      ) as HTMLElement).style.transition = `${transitionTime}s ${transitionDelay}s`;
+      if (hasNav) {
+        const index = parseInt(slide.dataset.index || "0");
+        navList[index]?.classList.remove(navSelectedToken);
+      }
       return !slide.classList.contains(slideShowedToken);
     },
     show(slide: HTMLElement) {
@@ -105,6 +176,7 @@ function generateHelperFunction(classes: BlurEffectConfig) {
       ) as HTMLElement).style.transition = `${transitionTime}s ${
         transitionDelay + transitionTime
       }s`;
+
       slide.style.opacity = "1";
       slide.style.visibility = "visible";
       slide.style.zIndex = "1";
@@ -112,9 +184,14 @@ function generateHelperFunction(classes: BlurEffectConfig) {
       slide
         .querySelector(slideContentSelector)
         ?.classList.add(slideContentTriggerToken);
+      if (hasNav) {
+        const index = parseInt(slide.dataset.index || "0");
+        navList[index]?.classList.add(navSelectedToken);
+      }
     },
     setupSlide(slide: Element, index: number, slideList: NodeListOf<Element>) {
       const slideClone = <HTMLElement>slide;
+      console.log(slide, index, beginSlide);
       if (index === beginSlide) {
         slideClone.classList.add(slideShowedToken);
         slide
@@ -126,6 +203,10 @@ function generateHelperFunction(classes: BlurEffectConfig) {
       slideClone.style.visibility = index !== beginSlide ? "hidden" : "visible";
 
       slideClone.style.zIndex = index !== beginSlide ? "0" : "1";
+      if (hasNav) {
+        // indexing for navigating
+        slideClone.dataset.index = "" + index;
+      }
       (slideClone.querySelector(
         slideContentSelector
       ) as HTMLElement).style.transition = `${transitionTime}s ${
@@ -140,5 +221,3 @@ function generateHelperFunction(classes: BlurEffectConfig) {
     },
   };
 }
-
-export default addBlurEffect;

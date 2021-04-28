@@ -21,3 +21,7 @@ body.overflow-disabled {
     left: 0;
   }
 }
+
+.has-border-bottom {
+  border-bottom: 1px solid var(--border--color, black);
+}
