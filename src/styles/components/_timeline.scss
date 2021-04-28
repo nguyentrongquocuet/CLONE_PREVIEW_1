@@ -15,6 +15,7 @@
 .timeline__list {
   position: relative;
   overflow: hidden;
+  padding: 0;
   @media screen and (min-width: $mobile + 1px) {
     & {
       max-width: 1260px;
@@ -23,6 +24,7 @@
       text-shadow: none;
       // padding-left: 0;
       // padding-right: 0;
+      padding: 0 50px;
     }
   }
 
@@ -38,6 +40,7 @@
   // position: absolute;
   height: 540px;
   width: 100%;
+  flex: 0 0 100%;
   // height: 100%;
   &:not(.is-selected) {
     opacity: 0;
@@ -121,25 +124,27 @@
   display: flex;
   justify-content: space-around;
   // box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
-  & > .timeline__tabitem {
+  > .timeline__tabitem {
     line-height: 0;
     padding: 30px 0;
+  }
+  .timeline__tabitem + .timeline__tabitem {
+    margin-left: 30px;
   }
   @media screen and (min-width: $mobile + 1px) {
     width: fit-content;
     margin: 0 auto;
     margin-top: 40px;
-    & > .timeline__tabitem {
-      padding: 15px 0;
-    }
-
+    // & > .timeline__tabitem {
+    //   padding: 15px 0;
+    // }
     .timeline__tabitem + .timeline__tabitem {
-      margin-left: 20px;
+      margin-left: 30px;
     }
   }
 }
 
-.timeline__tabitem.is-focus {
+.timeline__tabitem.is-selected {
   @include font(18, 0, 0);
   line-height: 0;
   transition: font-size 0.3s;
@@ -149,6 +154,12 @@
   text-align: center;
   padding: 80px 14px 40px 14px;
   color: white;
+  // opacity: 0;
+  // transform: translateY(70px) rotateX(0deg);
+  // &.is-animated {
+  //   opacity: 1;
+  //   transform: translateY(0) rotateX(0deg);
+  // }
 }
 
 .timeline__desc {

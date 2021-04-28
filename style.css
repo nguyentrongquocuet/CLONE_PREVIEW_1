@@ -690,9 +690,9 @@ body {
     margin: 0 auto;
     margin-top: 40px;
   }
-  .timeline__tab > .timeline__tabitem {
+  /* .timeline__tab > .timeline__tabitem {
     padding: 15px 0;
-  }
+  } */
   .timeline__tab .timeline__tabitem + .timeline__tabitem {
     margin-left: 20px;
   }

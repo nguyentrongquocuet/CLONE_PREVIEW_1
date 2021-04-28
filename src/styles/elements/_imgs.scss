@@ -20,6 +20,14 @@
   }
 }
 
+.img__container.is-paralax {
+  background-attachment: fixed;
+  .img {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .img__container.has-backdrop {
   &::after {
     content: "";
@@ -85,6 +93,20 @@
   width: 100%;
 }
 
-.img.has-aspect-ratio {
+.img__container.has-aspect-ratio {
   object-fit: contain;
+  &::before {
+    content: "";
+    display: block;
+    --aspect: calc(3 / 4);
+    padding-bottom: calc(100% / var(--aspect));
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

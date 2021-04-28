@@ -20,9 +20,14 @@
 }
 
 .section.has-pad {
-  padding: 50px 0;
+  // padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   @media screen and (min-width: $tablet) {
-    padding: 80px 0;
+    // padding: 80px 0;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
@@ -35,6 +40,10 @@
 .section__body.is-fullscreen {
   width: 100%;
   height: 100%;
+}
+
+.section__body.has-slideshow {
+  position: relative;
 }
 
 //SECTION WITH SLOGAN INSIDE
@@ -124,16 +133,11 @@
 
 .shop-the-look.container {
   @media screen and (min-width: $mobile + 1px) {
-    // padding-left: 90px;
-    // padding-right: 90px;
     max-width: 1260px;
     margin: 0 auto;
-    .shop-the-look__footer {
-      // margin-top: 40px;
-    }
+
     .shop-the-look__item {
-      margin-left: auto;
-      height: 600px;
+      width: 100%;
     }
   }
   @media screen and (min-width: $tablet + 1px) {
@@ -142,13 +146,12 @@
     grid-gap: 4rem;
     align-items: center;
     .shop-the-look__item {
-      height: 513px;
-      // padding: 0 30px;
+      margin-left: auto;
     }
   }
 }
 
-.shop-the-look__info.container {
+.shop-the-look__info {
   header {
     display: none;
   }
@@ -163,26 +166,16 @@
       }
     }
   }
-}
-
-.shop-the-look__item {
-  height: 400px;
-  width: fit-content;
-  // margin: 0 auto;
-  // padding: 0 24px;
-}
-
-.shop-the-look__img {
-  width: fit-content;
-  img {
-    max-width: calc(100vw - 48px);
+  @media screen and (min-width: $mobile) {
+    margin-left: 50px;
   }
 }
 
-.shop-the-look__footer {
-  // padding: 0 24px;
+.shop-the-look__item {
+  width: 453px;
+  margin: 0 auto;
+  max-width: 100%;
 }
-
 .gift-card-image__wrapper {
   padding: 0 24px;
 }

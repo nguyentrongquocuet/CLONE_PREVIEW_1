@@ -34,7 +34,7 @@
   }
 }
 
-.nav__wrapper {
+#sidebar .nav__wrapper {
   height: calc(
     100vh - var(--sidebar-header-height) - var(--sidebar-footer-height)
   );
