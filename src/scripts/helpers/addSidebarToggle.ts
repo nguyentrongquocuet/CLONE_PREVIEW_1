@@ -19,11 +19,19 @@ export function addSidebarToggle(
   toggleButtonQuery: string = defaultToggleQuery,
   toggledToken: string = "is-visible"
 ) {
-  document.querySelectorAll(toggleButtonQuery).forEach((e) => {
+  const triggerList = document.querySelectorAll(toggleButtonQuery);
+  let revoke: null | Function = null;
+  triggerList.forEach((e) => {
     e.addEventListener("click", (e) => {
+      console.log("TRIGGERD");
       e.stopPropagation();
       if (toggleSidebar(sidebar)) {
-        clickOutside(sidebar, () => toggleSidebar(sidebar));
+        revoke = clickOutside(sidebar, () => {
+          toggleSidebar(sidebar);
+        })[1];
+      } else {
+        if (revoke) revoke();
+        revoke = null;
       }
     });
   });
