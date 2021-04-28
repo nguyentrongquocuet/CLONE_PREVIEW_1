@@ -75,3 +75,30 @@ function setHeaderHeightVar() {
 
 window.addEventListener("resize", setHeaderHeightVar);
 window.addEventListener("load", setHeaderHeightVar);
+
+// TEST
+
+// const test = document.querySelector("#effect-test");
+// const container = test?.parentElement;
+// const trigger = document.querySelector("#eff-toggle-test");
+// let animated = false;
+// const testEff = {
+//   position: "fixed",
+//   height: "fit-content",
+//   zIndex: "10",
+//   left: "0",
+//   top: "0",
+// };
+
+// (test as HTMLElement).style.transition = ".5s";
+
+// trigger?.addEventListener("click", (e) => {
+//   const target = test as HTMLElement;
+//   for (let c in testEff) {
+//     target.style.position = "fixed";
+//     target.style.height = "fit-content";
+//     target.style.zIndex = "10";
+//     target.style.left = "0";
+//     target.style.top = "0";
+//   }
+// });
