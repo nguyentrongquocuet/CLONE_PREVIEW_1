@@ -59,7 +59,7 @@ function addScrollEffect(
     navSelector
   ) as NodeListOf<HTMLElement>;
 
-  if (breakpoint && window.outerWidth > breakpoint) {
+  if (breakpoint && window.innerWidth > breakpoint) {
     lastStatus = "above_breakpoint";
     navContainer.style.display = "none";
     if (!autoReconnect) {
@@ -80,7 +80,7 @@ function addScrollEffect(
 
   if (breakpoint) {
     const onResize = (e: Event) => {
-      if (breakpoint && (e.target as Window).outerWidth > breakpoint) {
+      if (breakpoint && (e.target as Window).innerWidth > breakpoint) {
         lastStatus = "above_breakpoint";
         navContainer.style.display = "none";
         if (!disconnected) resetToDefault(container, observer, filledConfig);
@@ -277,7 +277,7 @@ function createObserve(
     (entries) => {
       entries.forEach(entryCallback);
     },
-    { threshold: 1, root: container }
+    { threshold: 1 }
   );
   return observer;
 }
