@@ -25,3 +25,8 @@ body.overflow-disabled {
 .has-border-bottom {
   border-bottom: 1px solid var(--border--color, black);
 }
+
+// SIMULATE EXACTLY HOW THIS WEB ACT ON MOBILE ENV
+::-webkit-scrollbar {
+  display: none;
+}
