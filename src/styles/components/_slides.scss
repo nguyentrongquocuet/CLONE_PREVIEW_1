@@ -4,12 +4,12 @@ body {
 
 .slideshow__container {
   display: flex;
-  overflow: auto;
+  // overflow: inherit;
   position: relative;
 }
 
-.slideshow__container.has-blur-effect {
-  overflow: hidden;
+.slideshow__container.has-fade-effect {
+  // overflow: hidden;
 }
 
 .slideshow__container.category-slideshow {
@@ -47,6 +47,7 @@ body {
 .slide {
   display: block;
   position: relative;
+  transition-delay: 0.5s;
 }
 
 .slide.is-fullscreen {
@@ -55,6 +56,11 @@ body {
 
 .slide__content {
   display: block;
+  transition: opacity 1s, transform 1s;
+}
+
+.slide__content.has-no-transition {
+  transition: none;
 }
 
 .slide__content.is-center {
@@ -68,14 +74,14 @@ body {
 .slide * {
   user-select: none;
 }
-.slideshow__container.has-overlay .slide img {
+.slideshow__container.has-fade-effect .slide img {
   pointer-events: none;
   user-select: none;
   transition: transform 1s 1s;
   transform: scale(1.1);
 }
 
-.slide.is-visible {
+.slide.is-selected {
   img {
     transform: scale(1) !important;
   }
@@ -138,21 +144,24 @@ body {
   }
 }
 
-// .slide__content.is-bottom.is-eff-a {
-//   transform: translateY(calc(0px + 70px)) rotateX(15deg);
-//   opacity: 0;
-//   &.is-animated {
-//     transform: translateY(0px) rotateX(0deg);
-//     opacity: 1;
-//   }
-// }
+.slide__content.is-bottom.is-eff-a {
+  transform: translateY(calc(0px + 70px)) rotateX(15deg);
+  // transition-delay: 1s;
+  opacity: 0;
+  &.is-animated {
+    transform: translateY(0px) rotateX(0deg);
+    opacity: 1;
+  }
+}
 
-// .slide__content.is-center.is-eff-a {
-//   transform: translateY(calc(-50% + 70px)) rotateX(15deg);
-//   opacity: 0;
-//   &.is-animated {
-//     // animation: magic-for-center 0.75s 0.5s ease-in 1 forwards;
-//     transform: translateY(-50%) rotateX(0deg);
-//     opacity: 1;
-//   }
-// }
+.slide__content.is-center.is-eff-a {
+  transform: translateY(calc(-50% + 70px)) rotateX(15deg);
+  opacity: 0;
+
+  // transition-delay: 1s;
+  &.is-animated {
+    // animation: magic-for-center 0.75s 0.5s ease-in 1 forwards;
+    transform: translateY(-50%) rotateX(0deg);
+    opacity: 1;
+  }
+}

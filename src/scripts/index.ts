@@ -1,4 +1,16 @@
+// Now you can use Swiper
+// const swiper = new Swiper(".swiper-container", {
+//   speed: 500,
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   // ...
+// });
+
+import "swiper/swiper-bundle.css";
 import "Styles/main.scss";
+
 import "Scripts/helpers/animationFrame";
 import addCollapseBehavior from "./helpers/addCollapseBehavior";
 import { addSidebarToggle } from "./helpers/addSidebarToggle";
@@ -6,6 +18,8 @@ import { DOMElement } from "src/types/customdom";
 import { addBlurEffect } from "./helpers/addSlideEffect";
 import ApplyHeaderReaction from "./helpers/addHeaderReaction";
 import addScrollEffect from "./helpers/addScrollEffect";
+import { FadeEffect } from "./helpers/fadeEffect";
+
 const sidebarSelector = "#sidebar";
 const sidebarItemSelector = ".nav__item.collapsible";
 
@@ -19,15 +33,38 @@ const timeLineShow = document.querySelector(".timeline__list");
 const timeLineNavigator = document.querySelector(".timeline__tab ");
 addCollapseBehavior(sidebarListItem as NodeListOf<Element>);
 addSidebarToggle(sidebar);
-// blurEffCon.forEach((e) => addBlurEffect(e));
 
-addBlurEffect(blurEffCon as DOMElement, {
-  rootElement: document.querySelector(".hero__slideshow") as HTMLElement,
-  hasNav: true,
-  navContainerSelector: ".slide__nav",
-  navSelector: ".slide__navitem",
-  navSelectedToken: "is-selected",
-});
+const heroSlider = new FadeEffect(".is-hero .swiper-container");
+
+const slideShow = new FadeEffect(
+  ".collection-list .swiper-container",
+  {
+    effect: "slide",
+    autoplay: {
+      delay: 1500,
+      reverseDirection: false,
+    },
+    breakpoints: {
+      641: {
+        pagination: false,
+      },
+    },
+  },
+  {
+    destroyBreakpoint: {
+      reInit: true,
+      threshold: 641,
+    },
+  }
+);
+
+// addBlurEffect(blurEffCon as DOMElement, {
+//   rootElement: document.querySelector(".hero__slideshow") as HTMLElement,
+//   hasNav: true,
+//   navContainerSelector: ".slide__nav",
+//   navSelector: ".slide__navitem",
+//   navSelectedToken: "is-selected",
+// });
 
 addBlurEffect(timeLineShow as DOMElement, {
   slideContentSelector: ".timeline__content",
@@ -48,22 +85,22 @@ ApplyHeaderReaction(header as HTMLElement, 100, "has-no-transparent");
 
 // TEST
 
-addScrollEffect(
-  document.querySelector(".slideshow__container.category-slideshow") as Element,
-  {
-    breakpoint: 641,
-    autoReconnect: true,
-    slideSelector: ".slide",
-    resetApproach: "reorder",
-    hasNav: true,
-    navContainerSelector: ".slide__nav",
-    navSelector: ".slide__navitem",
-    navSelectedToken: "is-selected",
-    rootElement: document.querySelector(
-      ".collection-list > .section__body"
-    ) as HTMLElement,
-  }
-);
+// addScrollEffect(
+//   document.querySelector(".slideshow__container.category-slideshow") as Element,
+//   {
+//     breakpoint: 641,
+//     autoReconnect: true,
+//     slideSelector: ".slide",
+//     resetApproach: "reorder",
+//     hasNav: true,
+//     navContainerSelector: ".slide__nav",
+//     navSelector: ".slide__navitem",
+//     navSelectedToken: "is-selected",
+//     rootElement: document.querySelector(
+//       ".collection-list > .section__body"
+//     ) as HTMLElement,
+//   }
+// );
 
 function setHeaderHeightVar() {
   const header = document.querySelector("header");

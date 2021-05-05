@@ -152,7 +152,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           {
             loader: CSSPlugin.loader,
@@ -194,23 +194,26 @@ module.exports = {
     }),
     new CSSPlugin({ filename: "styles/index.css" }),
   ],
-  // optimization: {
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       ...createVendors({
-  //         vendors: {
-  //           react: {
-  //             vendor: "react, react-dom",
-  //           },
-  //           otherLibs: {
-  //             vendor: "lodash",
-  //             name: "otherlib",
-  //           },
-  //         },
-  //       }),
-  //     },
-  //   },
-  // },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        ...createVendors({
+          vendors: {
+            swiper: {
+              vendor: "swiper",
+            },
+            // react: {
+            //   vendor: "react, react-dom",
+            // },
+            // otherLibs: {
+            //   vendor: "lodash",
+            //   name: "otherlib",
+            // },
+          },
+        }),
+      },
+    },
+  },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     hot: true,
